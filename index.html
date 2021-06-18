@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <script src="cdn.min.js" defer></script>
+    <title>Tailwind Alpine</title>
+  </head>
+  <body>
+    <div class="max-w-xl mx-auto flex flex-col">
+      <h1 class="text-pink-500 bg-green-300 p-1 mb-2 text-center">
+        Tailwind Alpine
+      </h1>
+      <div class="flex justify-center">
+        <button
+          x-data="{hi: 'hello'}"
+          x-on:click="alert(hi)"
+          class="bg-indigo-100 p-2 m-1 shadow rounded"
+        >
+          Click me
+        </button>
+      </div>
+      <ul x-data="{items: ['hi', 'by']}">
+        <template x-for="item in items">
+          <li x-text="item"></li>
+        </template>
+      </ul>
+    </div>
+  </body>
+</html>
